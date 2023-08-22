@@ -1,28 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Card from './components/Card';
+import Botoes from './components/Botoes';
 
 export default function App() {
   return (
-    <ScrollView style={{marginTop: 30}}>
-      
-      <View style={styles.card}>
-        <Text style={styles.titulo}>Hello World!</Text>
-        <Text style={styles.paragrafo2}>Paragrafo</Text>
-        <Text style={styles.paragrafo}>Paragrafo</Text>
-        <Text style={styles.paragrafo2}>Paragrafo</Text>
-      </View>
+    <ScrollView style={{margin: 15}}>
 
-      <Card></Card>
+      <Botoes/>
 
-      <View style={styles.card}>
-        <Text style={styles.titulo}>Hello World!</Text>
-        <Text style={styles.paragrafo2}>Segundo Card</Text>
-      </View>
-      <View style={styles.card}>
-        <Text style={styles.titulo}>Hello World!</Text>
-        <Text style={styles.paragrafo2}>Terceiro Card</Text>
-      </View>
+      <Card titulo="Cringe" text="Intankavel demais vsfd">
+        <Text>Paragrafo 1</Text>
+        <Text>Paragrafo 2</Text>
+        <Text>Paragrafo 3</Text>
+        <Button title='Saiba Mais'/>
+      </Card>
+
+      <Card titulo="Gado" text="Abuble abuble abuble >:)">
+        <Text>Roubaram meu pau :(</Text>
+        <Text>Capado</Text>
+        <Text>Canalha :(</Text>
+        <Button title='Escutar'/>
+      </Card>
+      <Card titulo="Goreu" text="Uma vez flamengo, sempre flamengo"></Card>
+      <Card titulo="Naoooo" text="Muito triste as coisas não é mesmo?"></Card>
+
     </ScrollView>
   );
 }
