@@ -1,31 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Card from './components/Card';
-import Botoes from './components/Botoes';
+import Pagina1 from './screens/Pagina1';
+import Pagina2 from './screens/Pagina2';
+import Pagina3 from './screens/Pagina3';
+import Arrays from './screens/Arrays';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Objeto from './screens/Objeto';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <ScrollView style={{margin: 15}}>
 
-      <Botoes/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="objeto" component={Objeto} options={{ title: "Objetos"}} />
+        <Stack.Screen name="arrays" component={Arrays} options={{ title: "Arrays"}} />
+        <Stack.Screen name="pagina1" component={Pagina1} options={{ title: "Página Principal" }} />
+        <Stack.Screen name="pagina2" component={Pagina2} options={{ title: "Cards" }} />
+        <Stack.Screen name="pagina3" component={Pagina3} options={{ title: "Nomes" }} />
+      </Stack.Navigator>
+    </NavigationContainer>
 
-      <Card titulo="Cringe" text="Intankavel demais vsfd">
-        <Text>Paragrafo 1</Text>
-        <Text>Paragrafo 2</Text>
-        <Text>Paragrafo 3</Text>
-        <Button title='Saiba Mais'/>
-      </Card>
-
-      <Card titulo="Gado" text="Abuble abuble abuble >:)">
-        <Text>Roubaram meu pau :(</Text>
-        <Text>Capado</Text>
-        <Text>Canalha :(</Text>
-        <Button title='Escutar'/>
-      </Card>
-      <Card titulo="Goreu" text="Uma vez flamengo, sempre flamengo"></Card>
-      <Card titulo="Naoooo" text="Muito triste as coisas não é mesmo?"></Card>
-
-    </ScrollView>
   );
 }
 
