@@ -15,28 +15,28 @@ const Objeto = () => {
         modelo: 'Celta',
         ano: 2003,
         cor: 'Preto',
-        foto: ''
+        foto: 'https://imperiocarmultimarcas.com.br/carros/6380396463cb571bf12441b0192fa7e0-thumbjpeg-chevrolet-celta-9011507-900-675-70.jpg'
     },
     {
         marca: 'Fiat',
         modelo: 'Pálio',
         ano: 1995,
-        cor: 'Azul',
-        foto: ''
+        cor: 'Vermelho',
+        foto: 'https://uploads.vrum.com.br/2022/06/Fiat-Palio-EDX-modelo-1996-vermelho-quatro-portas.jpg'
     },
     {
         marca: 'VW',
         modelo: 'Gol',
         ano: 2010,
-        cor: 'Vermelho',
-        foto: ''
+        cor: 'Prata',
+        foto: 'https://image1.mobiauto.com.br/images/api/images/v1.0/82106955/transform/fl_progressive,f_webp,q_95'
     },
     {
         marca: 'Ford',
         modelo: 'Ka',
         ano: 2020,
-        cor: 'Prata',
-        foto: ''
+        cor: 'Branco',
+        foto: 'https://carango.com.br/f.php?w=810&h=620&cc=0&zc=1&src=https://carango.nyc3.digitaloceanspaces.com/images/veiculos/2022/09/ford-ka-2020-1-0-se-plus-4p-flex-manual-flex-107651-efvlp7.jpg'
     }]
 
     return (
@@ -44,16 +44,14 @@ const Objeto = () => {
 
             {carros.map(item => (
                 <>
-
-                    <Card style={{ marginBottom: 20, backgroundColor: "gray" }}>
-                        <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+                    <Card style={{margin:15}}>
                         <Card.Content>
-                            <Text variant="titleLarge">{item.marca}</Text>
-                            <Text variant="bodyMedium">{item.modelo}</Text>
+                            <Text variant="titleLarge">{item.modelo} - {item.marca}</Text>
+                            <Text variant="bodyMedium">{item.ano}</Text>
+                            <Text>"{item.cor}"</Text>
                         </Card.Content>
-                        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+                        <Card.Cover source={{ uri: item.foto }} />
                     </Card>
-
                 </>
             ))}
 
